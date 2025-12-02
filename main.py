@@ -6,7 +6,7 @@ from raycaster import Raycaster
 
 from settings import *
 
-screen = pygame.display.set_mode((WINDOW_WIDTH, WINDOW_HEIGHT))
+screen = pygame.display.set_mode((WINDOW_WIDTH, WINDOW_HEIGHT), pygame.FULLSCREEN)
 
 map = Map()
 player = Player()
@@ -18,6 +18,9 @@ while True:
     clock.tick(60)
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
+            pygame.quit()
+            exit()
+        if event.type == pygame.KEYDOWN and event.key == pygame.K_ESCAPE:
             pygame.quit()
             exit()
     
