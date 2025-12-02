@@ -153,7 +153,7 @@ class Ray:
 
         self.distance *= math.cos(self.player.angle - self.rayAngle)
 
-        self.color *= (30 / self.distance)
+        self.color *= (60 / self.distance)
         if self.color > 255:
             self.color = 255
         elif self.color < 0:
